@@ -22,11 +22,6 @@ public class fenetre extends JFrame{
 	    
 	    pan.add(box);
 	    
-	    FactoryButton bouton = new Theme1Factory();
-	    JButton mybouton = bouton.createButton();
-	    
-	    pan.add(mybouton);
-	    
 	    box.addActionListener(new ActionListener() {
 			
 			@Override
@@ -34,14 +29,19 @@ public class fenetre extends JFrame{
 				JButton mybouton;
 				if(box.getSelectedItem().equals("theme1")){
 					FactoryButton bouton = new Theme1Factory();
-				    mybouton = bouton.createButton();
+					mybouton = bouton.createButton();
 				}
 				else {
 					FactoryButton bouton = new Theme2Factory();
 				    mybouton = bouton.createButton();
 				}
+								
+				try {
+					pan.remove(1); // moche
+				} catch (Exception e2) {
+					// Bouton inexistant lors du premier appuie 
+				}
 				
-				pan.remove(1);
 				pan.add(mybouton);
 				pan.repaint();
 				pan.revalidate();

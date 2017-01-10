@@ -8,6 +8,4 @@ public class Theme2Factory implements FactoryButton{
 	public JButton createButton() {
 		return new Theme2();
 	}
-
-	
 }
