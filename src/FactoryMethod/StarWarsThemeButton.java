@@ -1,4 +1,4 @@
-package Button;
+package FactoryMethod;
 
 import javax.swing.JButton;
 

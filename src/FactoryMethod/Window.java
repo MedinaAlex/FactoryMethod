@@ -1,17 +1,20 @@
-package Button;
+package FactoryMethod;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class Window extends JFrame{
 	
-	ArrayList<IThemeFactory> model = new ArrayList<>();
+	/*
+	 Possibilité d'esporter cette liste dans une autre classe pour que la vue
+	 ne connaisse pas la liste des thèmes disponibles.
+	 */
+	ArrayList<IThemeFactory> model = new ArrayList<>(); 
 
 	public Window(){
 		this.setTitle("button");
@@ -21,13 +24,12 @@ public class Window extends JFrame{
 
 	    model.add(new MarioTheme());
 		model.add(new StarWarsTheme());
-	    
-	    JComboBox<String> box = new JComboBox<>();
-	    box.addItem("Theme Mario");
-	    box.addItem("Theme StarWars");
-	    
+		
+		String[] themes = {"Theme Mario", "Theme StarWars"};
+	    JComboBox<String> box = new JComboBox<>(themes);
+
 	    pan.add(box);
-	    
+
 	    box.addActionListener(new ActionListener() {
 			
 			@Override
@@ -50,6 +52,6 @@ public class Window extends JFrame{
 	}
 	
 	public static void main(String[] args){
-		JFrame fenetre = new Window();
+		new Window();
 	}
 }
