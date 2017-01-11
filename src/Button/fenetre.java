@@ -17,23 +17,27 @@ public class fenetre extends JFrame{
 	    JPanel pan = new JPanel();
 	    
 	    JComboBox<String> box = new JComboBox<>();
-	    box.addItem("theme1");
-	    box.addItem("theme2");
+	    box.addItem("Mario");
+	    box.addItem("StarWars");
 	    
 	    pan.add(box);
+	    
+	   /* IThemeFactory bouton = new MarioTheme();
+		JButton mybouton = bouton.createButton("Mario"); // Ajout d'un bouton au début
+		pan.add(mybouton); */
 	    
 	    box.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				JButton mybouton;
-				if(box.getSelectedItem().equals("theme1")){
-					FactoryButton bouton = new Theme1Factory();
-					mybouton = bouton.createButton();
+				if(box.getSelectedItem().equals("Mario")){
+					IThemeFactory bouton = new MarioTheme();
+					mybouton = bouton.createButton("Mario");
 				}
 				else {
-					FactoryButton bouton = new Theme2Factory();
-				    mybouton = bouton.createButton();
+					IThemeFactory bouton = new StarWarsTheme();
+				    mybouton = bouton.createButton("StarWars");
 				}
 								
 				try {
