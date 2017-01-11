@@ -4,5 +4,5 @@ import javax.swing.JButton;
 
 public interface IThemeFactory {
 
-	JButton createButton(String titre); 
+	JButton createButton(); 
 }

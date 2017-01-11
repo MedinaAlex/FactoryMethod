@@ -5,7 +5,7 @@ import javax.swing.JButton;
 public class StarWarsTheme implements IThemeFactory{
 
 	@Override
-	public JButton createButton(String titre) {
-		return new StarWarsThemeButton(titre);
+	public JButton createButton() {
+		return new StarWarsThemeButton();
 	}
 }

@@ -4,7 +4,7 @@ import javax.swing.JButton;
 
 public class StarWarsThemeButton extends JButton{
 	
-	public StarWarsThemeButton(String titre) {
-		super(titre);
+	public StarWarsThemeButton() {
+		super("StarWars");
 	}	
 }
